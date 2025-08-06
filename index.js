@@ -5,14 +5,13 @@ const app = express();
 // Middleware para aceitar JSON no corpo
 app.use(express.json());
 
-// Rota GET só para teste
 app.get('/', (req, res) => {
     res.send('API para inverter texto');
 });
 
 // Rota POST para inverter texto
 app.post('/inverter', (req, res) => {
-    const { texto } = req.body; // Aqui usamos o nome correto: "texto"
+    const { texto } = req.body; 
 
     // Verifica se o campo existe e não está vazio
     if (texto === undefined || texto.trim() === '') {
